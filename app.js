@@ -1,6 +1,6 @@
-const express = require('express')
+const express = require('express') // expressi dahil ettik 
 const path = require('path')
-/*const { Socket } = require('socket.io') */
+
 const app = express()
 const PORT = process.env.PORT || 4000
 const server = app.listen(PORT, () => console.log(`> Server is up and running on port ${PORT}`))
@@ -12,12 +12,12 @@ let socketsConnected = new Set()
 io.on('connection',onConnected)
 
 function onConnected(socket){
-    console.log('Socket connected', socket.id)
+    console.log('Socket connected', socket.id) // Konsola socket id lerini yazırdık
     socketsConnected.add(socket.id)
     io.emit('client-total',socketsConnected.size)
 
     socket.on('disconnect', ()=> {
-        console.log('Socket disconnected',socket.id)
+        console.log('Socket disconnected', socket.id)
         socketsConnected.delete(socket.id)
         io.emit('client-total',socketsConnected.size)
 
@@ -29,9 +29,5 @@ function onConnected(socket){
     socket.on('feedback', (data) => {
         socket.broadcast.emit('feedback', data)
       })
-    socket.on('feedback',(data))
-    socket.on('feedback',(data) =>{
-        socket.broadcast.emit('feedback',data)
-    })
     
 }

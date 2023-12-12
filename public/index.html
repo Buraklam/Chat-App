@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <link 
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
+         crossorigin="anonymous"  
+         />
+         <link rel="stylesheet" href="style.css" />
+        <title>Chat APP</title>
+        <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+ </head>
+ <body>
+    <h1 class="title"> Chat 💬 </h1>
+    <div class="main">
+     <div class="name">
+      <span><i class="far fa-user"></i></span>
+      <input 
+       type="text" 
+       id="name-input" 
+       class="name-input" 
+       value="anonymous" 
+       maxlength="20">
+     </div>
+
+     <ul class="message-container" id ="message-container">
+
+      <li class="message-left">
+       <p class="message">
+        
+        
+       </p> 
+
+      </li>
+      <li class="message-right">
+       <p class="message">
+        
+        
+       </p> 
+      </li>
+
+      <li class="message-feedback">
+      <p class="feedback" id="feedback">
+        Mesaj yaziyor
+      </p>
+      </li> 
+     </ul>
+
+     <form class="message-form" id="message-form">
+      <input 
+       type="text" 
+       name="message" 
+       id="message-input" 
+       class="message-input"
+       />
+      <div class="v-divider"></div> <!-- mesaj yazdığımız yer ile yolladığımız butonu ayırıyor -->
+      <button type="submit" class="send-button">
+       send <span><i class="fas fa-paper-plane"></i></span>
+      </button>
+     </form>
+   
+    </div>
+     <!-- Toplam kullanıcı sayısı -->
+     <h3 class="client-total" id="client-total">  </h3>
+     <script src="socket.io/socket.io.js"></script>
+     <!-- moment js i ekliyor-->
+     <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" 
+      integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" 
+      crossorigin="anonymous" 
+    ></script>
+     <script src="main.js"></script>
+ </body>
+</html>
